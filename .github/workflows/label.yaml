@@ -8,6 +8,10 @@ jobs:
   see-labels:
     runs-on: ubuntu-18.04
     steps:
+      - name: Checkout the head commit of the branch
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
       - name: Show labels
         run: |
           echo "TAG: git describe --tags"
